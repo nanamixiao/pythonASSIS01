@@ -33,8 +33,8 @@ while identify :
         # calculate the colum # depend on row number
         columNum = 2 * lineNum + 1
         # for the first line
-        for i in range(columNum):
-            if i == 0 or i == columNum - 1 or i == (columNum - 1) / 2:
+        for colum in range(columNum):
+            if colum == 0 or colum == columNum - 1 or colum == (columNum - 1) / 2:
                 print(asterisk, end="")
             else:
                 print(space, end="")
@@ -43,16 +43,19 @@ while identify :
         # use to calculate the * position
         numOfSpace = 2
         # the second to the end line
-        for i in range(lineNum - 1):
-            for j in range(columNum):
+        for line in range(lineNum - 1):
+            for colum in range(columNum):
                 # determine if the begining or ending or in the middle print the *
 
-                if j == lineNum - i - 1 or j == lineNum + numOfSpace - i - 1 or j == 0 or j == columNum - 1:
+                if colum == lineNum - line - 1 or colum == lineNum + numOfSpace - line - 1 or colum == 0 or colum == columNum - 1:
                     print(asterisk, end="")
                 else:
                     print(space, end="")
             numOfSpace += 2
             print()  # enter the newline
+
+
+
 
 
 
